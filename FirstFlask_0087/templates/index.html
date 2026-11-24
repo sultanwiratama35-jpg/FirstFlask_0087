@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Flask POST</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Form Input Nama</h1>
+
+        <p class="subtitle">
+            Contoh Parsing Parameter Menggunakan Method POST
+        </p>
+
+        <form action="/" method="POST">
+
+            <label for="nama">Masukkan Nama:</label>
+
+            <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Masukkan nama Anda"
+                required
+            >
+
+            <button type="submit">Kirim Data</button>
+
+        </form>
+
+        {% if nama %}
+        <div class="hasil">
+
+            <label>Hasil Parsing Parameter:</label>
+
+            <p>Halo, {{ nama }}!</p>
+
+            <span>Data berhasil dikirim menggunakan Method POST.</span>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
